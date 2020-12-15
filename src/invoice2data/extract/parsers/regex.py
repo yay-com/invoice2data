@@ -46,7 +46,7 @@ def parse(template, settings, content, legacy=False):
         # natural). Don't do that for legacy parsing to keep backward
         # compatibility.
         if legacy:
-            result = list(set(result))
+            result = list(OrderedDict.fromkeys(result))
         else:
             result = list(OrderedDict.fromkeys(result))
 
